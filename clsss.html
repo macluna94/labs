@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro de Clases</title>
+
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+
+    <script src="https://kit.fontawesome.com/ea0ab640f1.js"></script>
+
+
+
+</head>
+
+<body class="wall">
+
+
+
+    <div class="container">
+
+        <div class="title-contenedor text-center">
+            <h1>Registro de Clases</h1>
+            <span>en el laboratorio</span>
+        </div>
+
+
+        <div class="container contenedor">
+
+            <div class="form-row text-center">
+                <div class="col-3 ">
+                    <label for="">Maestro</label>
+                </div>
+                <div class="col-2">
+                    <label for="">Clase</label>
+                </div>
+                <div class="col-1">
+                    <label for="">Sala</label>
+                </div>
+                <div class="col-2">
+                    <label for="">Carrera</label>
+                </div>
+                <div class="col-1">
+                    <label for="">Semestre</label>
+                </div>
+                <div class="col-1">
+                    <label for="">Alumnos</label>
+                </div>
+                <div class="col-2">
+                    <label for="">Periodo</label>
+                </div>
+            </div>
+
+
+
+            <div class="form-row text-center" id="unodos">
+                <div class="col-3 ">
+
+                    <input type="text" class="form-control " id="name_teacher">
+
+                </div>
+                <div class="col-2">
+
+                    <input type="text" class="form-control" id="class_name">
+
+                </div>
+                <div class="col-1">
+                    <select class="form-control" id="class_rom">
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                    </select>
+                </div>
+                <div class="col-2">
+
+                    <select class="form-control" id="carrer">
+                        <option value="industrial">Industrial</option>
+                        <option value="electromecanica">Eletromecanica</option>
+                        <option value="sistemas">Sistemas</option>
+                        <option value="administracion">Adminstracion</option>
+                        <option value="contabilidad">Contabilidad</option>
+                    </select>
+
+                </div>
+                <div class="col-1">
+
+                    <select class="form-control" id="semester">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+
+                </div>
+                <div class="col-1">
+
+                    <input type="text" class="form-control" min="1" id="num_students">
+
+                </div>
+                <div class="col-2">
+
+                    <select class="form-control" id="stage">
+                        <option value="Enero-Julio">En - Jul</option>
+                        <option value="Agosto-Diciembre">Agost - Dic</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+            <div style="align-self: center;margin-top: 1em;">
+                <button class="btn btn-primary" id="row_add_class" disabled="true">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+                <button type="submit" class="btn btn-primary" onclick="dataName()">Registrar</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="container" id="respuesta">
+
+    </div>
+
+
+
+    <script>
+        $("#row_add_class").click(function () {
+            $("#unodos").append(
+                '<br/><div class="col-3"><input type="text" class="form-control" id="name_teacher"></div><div class="col-2"><input type="text" class="form-control" id="class_name"></div><div class="col-1"><select class="form-control" id="class_rom"><option value="1"> 1 </option><option value="2"> 2 </option></select></div><div class="col-2"><select class="form-control" id="carrer"><option value="industrial">Industrial</option><option value="electromecanica">Eletromecanica</option><option value="sistemas">Sistemas</option><option value="administracion">Adminstracion</option><option value="contabilidad">Contabilidad</option></select></div><div class="col-1"><select class="form-control" id="semester"><option value="1">1</option><option value="2">2</option> <option value="3">3</option> <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select> </div><div class="col-1"><input type="number" class="form-control" min="1" id="num_students"></div><div class="col-2"><select class="form-control" id="stage"><option value="Enero-Julio">En-Jul</option><option value="Septiembre-Diciembre">Sep- Dic</option></select></div>'
+            );
+            console.log("Hecho");
+        });
+
+
+        function dataName() {
+            var names_array = [];
+            var names = document.querySelectorAll("#name_teacher");
+
+            var clases_array = [];
+            var clases = document.querySelectorAll("#class_name");
+
+            var rom_array = [];
+            var roms = document.querySelectorAll("#class_rom");
+
+            var carrers_array = [];
+            var carrers = document.querySelectorAll("#carrer");
+
+            var semesters_array = [];
+            var semesters = document.querySelectorAll("#semester");
+
+            var students_array = [];
+            var students = document.querySelectorAll("#num_students");
+
+            var stage_array = [];
+            var stages = document.querySelectorAll("#stage");
+
+            recolector(names, names_array);
+            recolector(clases, clases_array);
+            recolector(semesters, semesters_array);
+            recolector(carrers, carrers_array);
+            recolector(students, students_array);
+            recolector(stages, stage_array);
+            recolector(roms, rom_array);
+
+
+            show("Nombres", names_array);
+            show("Clases", clases_array)
+            show("Semestres", semesters_array);
+            show("Carerras", carrers_array);
+            show("Alumnos", students_array);
+            show("Periodo", stage_array);
+
+            cargarI(names_array, clases_array, rom_array, carrers_array, semesters_array, students_array, stage_array);
+        };
+
+
+        function show(titulo, arreglo) {
+            console.log(titulo);
+            console.log(arreglo);
+        }
+
+        function recolector(campo, arreglo) {
+            for (let i = 0; i < campo.length; i++) {
+                arreglo.push(campo[i].value);
+            }
+
+        }
+
+
+
+
+        function cargarI(nombres, clases, salas, carreras, semestres, estudiantes, periodos) {
+            var datos_clases = {
+                "nombres": nombres,
+                "clases": clases,
+                "salas": salas,
+                "carreras": carreras,
+                "semestre": semestres,
+                "estudiantes": estudiantes,
+                "periodo": periodos
+            }
+
+            $.ajax({
+                data: datos_clases,
+                url: 'class_reg.php',
+                type: 'post',
+                success: function (respuesta) {
+                    $('#respuesta').html(respuesta);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        $("#name_teacher").keyup(function () {
+
+            if ($("#name_teacher").length == 4) {
+                //$("#row_add_class").attr('disabled','true');
+                console.log("Vacio");
+            } else {
+                $("#row_add_class").removeAttr('disabled');
+            }
+
+            console.log($("#name_teacher").val());
+            console.log($("#name_teacher").length);
+
+        });
+    </script>
+
+</body>
+
+</html>
