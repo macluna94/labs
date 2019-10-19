@@ -31,7 +31,9 @@
 <div class="container" style="background-color:ghostwhite; padding: 1em;">
     <h3>Codigo:</h3>
     <input type="text" class="form-control" id="code" onchange="lector();" autofocus >
+    <button class="btn btn-primary" onclick="setReg()" >Set time</button>
 </div>
+
 
 <div class="container" id="table_content" style="background-color:ghostwhite; padding: 1em;">
 
@@ -45,14 +47,32 @@
 
 function lector(){
 
-var code = document.querySelector("#code");
+    var code = document.querySelector("#code");
 
-var codigo = code.value;
-console.log(codigo);
+    var codigo = code.value;
+    console.log(codigo);
 
-$.ajax({
+    $.ajax({
+        data: {
+            "codigo": codigo
+        },
+        url: 'check_in.php',
+        type: 'post',
+        success: function (respuesta) {
+            $('#table_content').html(respuesta);
+        }
+    });
+
+    code.value = "";
+}
+
+
+
+function setReg(){
+    console.log("registro!!!");
+    $.ajax({
                 data: {
-                    "codigo": codigo
+                    "reg": true
                 },
                 url: 'check_in.php',
                 type: 'post',
@@ -60,12 +80,10 @@ $.ajax({
                     $('#table_content').html(respuesta);
                 }
             });
+};
 
-code.value = "";
-}
 
 </script>
-
 
 
 </body>

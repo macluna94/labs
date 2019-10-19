@@ -62,7 +62,6 @@ else{
     </div>
     <script>
     $("#alerta").fadeOut(5000);
-     
     </script>';  
 }
 
