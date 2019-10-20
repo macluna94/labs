@@ -35,6 +35,7 @@ if ($queryCheckState == 0 ) {
 
         while($row = mysqli_fetch_row($requestCode)){
             $sql2 = "INSERT INTO `registro` (`id`, `teacher`, `class`, `sala` , `carrera` , `time_in`, `time_out`, `date`, `state`) VALUES (NULL, '$row[2]', '$row[1]','$row[3]','$row[4]','$time', NULL, '$date', '0')";
+            echo $sql2;
                 
         }
         $result = mysqli_query($connection, $sql2);
@@ -64,6 +65,7 @@ else {
         
             
             $sqlu = "UPDATE `registro` SET `time_out` = '$time', `state` = '1',`total_time` = '$x' WHERE `registro`.`id` = $row[0];";
+            echo $sqlu;
                 
         }
         
