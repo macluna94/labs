@@ -49,7 +49,6 @@ if ($queryCheckState == 0 ) {
 }
 else {
     // Registro de Hora
-
     $sety = mysqli_query($connection, $SqlCheckState);
     $checkCode= mysqli_num_rows($sety);
 
