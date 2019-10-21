@@ -1,59 +1,9 @@
-
-
-.block{
-    background-color: blueviolet;
+.block {
     padding: 0em;
     margin: 1em;
     transition: transform .2s;
 }
-.block:hover{
+
+.block:hover {
     transform: scale(1.3);
-}
-
-
-.block-2{
-    background-color: chartreuse;
-    padding: 0em;
-    margin: 1em;
-}
-
-.block-3{
-    background-color: crimson;
-    padding: 0;
-    margin: 1em;
-}
-
-img{
-    padding: 1em;
-}
-
-.uno{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-}
-
-.sub-title{
-    padding: 0;
-    background-color: aliceblue;
-    
-}
-
-.title-contenedor{
-    background-color: whitesmoke;
-    margin-bottom: 1em;
-    padding: 1em;
-}
-.contenedor{
-    background-color: #ffffff;
-    border-radius: 1em;
-    padding: 1.5em;
-    
-}
-
-.wall{
-    background-color: whitesmoke;
-
 }

@@ -28,14 +28,14 @@ if ($queryCheckState == 0 ) {
     $requestCode = mysqli_query($connection, $findCode);
     $checkCode= mysqli_num_rows($requestCode);
 
+    // Registro de Entrada
     if ($checkCode!= 0) {
 
         $time = date("H:i:s");
         $date = date("Y-m-d");
 
         while($row = mysqli_fetch_row($requestCode)){
-            $sql2 = "INSERT INTO `registro` (`id`, `teacher`, `class`, `sala` , `carrera` , `time_in`, `time_out`, `date`, `state`) VALUES (NULL, '$row[2]', '$row[1]','$row[3]','$row[4]','$time', NULL, '$date', '0')";
-                
+            $sql2 = "INSERT INTO `registro` (`id`, `teacher`, `class`, `sala` , `carrera` , `time_in`, `time_out`, `date`, `state`, `total_time`) VALUES (NULL, '$row[2]', '$row[1]','$row[3]','$row[4]','$time', NULL, '$date', '0', NULL)";
         }
         $result = mysqli_query($connection, $sql2);
     }
@@ -47,7 +47,7 @@ if ($queryCheckState == 0 ) {
 
 }
 else {
-    // Registro de Hora
+    // Hora de Salida
     $sety = mysqli_query($connection, $SqlCheckState);
     $checkCode= mysqli_num_rows($sety);
 
@@ -72,8 +72,8 @@ else {
 
 //--------- Seccion de la tabla --------------------------------->
 echo '
-    <table class="table table-dark">
-    <thead>
+    <table class="table table-striped">
+    <thead class="thead-dark">
     <tr>
     <th scope="col">Maestro</th>
     <th scope="col">Clase</th>
@@ -96,9 +96,6 @@ while($row = mysqli_fetch_row($result)){
             <td>'.$row[4].'</td>
             <td>'.$row[5].'</td>
             <td>'.$row[6].'</td>
-            <td>';
-        echo '</td>
-        <td></td>
         </tr>
         ';
 }
