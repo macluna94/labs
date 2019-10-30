@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $database = "Lab";
 $username = "root";
@@ -51,7 +50,7 @@ else {
     $sety = mysqli_query($connection, $SqlCheckState);
     $checkCode= mysqli_num_rows($sety);
 
-    if ($checkCode!= 0) {
+    if ($checkCode != 0) {
 
         $time = date("H:i:s");
         while($row = mysqli_fetch_row($sety)){
@@ -78,6 +77,7 @@ echo '
     <th scope="col">Maestro</th>
     <th scope="col">Clase</th>
     <th scope="col">Sala</th>
+    <th scope="col">Alumnos</th>
     <th scope="col">Carrera</th>
     <th scope="col">Hora Entrada</th>
     <th scope="col">Hora Salida</th>
@@ -94,6 +94,7 @@ while($row = mysqli_fetch_row($result)){
             <td>'.$row[2].'</td>
             <td>'.$row[3].'</td>
             <td>'.$row[4].'</td>
+            <td> <input type="text" class ="form-control sm-2">    </td>
             <td>'.$row[5].'</td>
             <td>'.$row[6].'</td>
         </tr>
@@ -104,12 +105,5 @@ echo '
     </tbody>
     </table>';
 
-
-
 mysqli_close($connection);
-
-
-
-
-
 ?>
