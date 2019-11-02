@@ -34,7 +34,7 @@ if ($queryCheckState == 0 ) {
         $date = date("Y-m-d");
 
         while($row = mysqli_fetch_row($requestCode)){
-            $sql2 = "INSERT INTO `registro` (`id`, `teacher`, `class`, `sala` , `carrera` , `time_in`, `time_out`, `date`, `state`, `total_time`) VALUES (NULL, '$row[2]', '$row[1]','$row[3]','$row[4]','$time', NULL, '$date', '0', NULL)";
+            $sql2 = "INSERT INTO `registro` (`id`, `teacher`, `class`, `sala` , `carrera`, `alumnos` , `time_in`, `time_out`, `date`, `state`, `total_time`) VALUES (NULL, '$row[2]', '$row[1]','$row[3]','$row[4]','$row[5]','$time', NULL, '$date', '0', NULL)";
         }
         $result = mysqli_query($connection, $sql2);
     }
@@ -54,7 +54,7 @@ else {
 
         $time = date("H:i:s");
         while($row = mysqli_fetch_row($sety)){
-        $datetime1 = date_create($row[5]);
+        $datetime1 = date_create($row[6]);
         $datetime2 = date_create($time);
 
         $interval = date_diff($datetime1, $datetime2);
@@ -77,8 +77,8 @@ echo '
     <th scope="col">Maestro</th>
     <th scope="col">Clase</th>
     <th scope="col">Sala</th>
-    <th scope="col">Alumnos</th>
     <th scope="col">Carrera</th>
+    <th scope="col">Alumnos</th>
     <th scope="col">Hora Entrada</th>
     <th scope="col">Hora Salida</th>
     </tr>
@@ -94,9 +94,9 @@ while($row = mysqli_fetch_row($result)){
             <td>'.$row[2].'</td>
             <td>'.$row[3].'</td>
             <td>'.$row[4].'</td>
-            <td> <input type="text" class ="form-control sm-2">    </td>
-            <td>'.$row[5].'</td>
+            <td> <input type="text" class ="form-control sm-2" value="'.$row[5].'">    </td>
             <td>'.$row[6].'</td>
+            <td>'.$row[7].'</td>
         </tr>
         ';
 }
