@@ -90,16 +90,10 @@
 
     </div>
 
-
-
     <script>
         function lector() {
-
             var code = document.querySelector("#code");
-
             var codigo = code.value;
-            console.log(codigo);
-
             $.ajax({
                 data: {
                     "codigo": codigo
@@ -110,10 +104,26 @@
                     $('#table_content').html(respuesta);
                 }
             });
-
             code.value = "";
         }
+
+        function setAlumnos(alum, id) {
+            $.ajax({
+                data: {
+                    'alumnos': alum,
+                    'id': id
+                },
+                url: 'update_alumnos.php',
+                type: 'post',
+                success: function () {
+                    document.getElementById("code").focus();
+                }
+            })
+        }
     </script>
+
+
+
 
 
 </body>

@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "Lab";
+$database = "lab";
 $username = "root";
 $pass = "";
 $table = "clases";

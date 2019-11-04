@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "Lab";
+$database = "lab";
 $username = "root";
 $pass = "";
 $table = "clases";
@@ -88,22 +88,43 @@ echo '
 $result = mysqli_query($connection, "SELECT * FROM `registro`");
 
 while($row = mysqli_fetch_row($result)){
-    echo '
+    if ($row[7] == '') {
+        
+        echo '
         <tr>
-            <td>'.$row[1].'</td>
-            <td>'.$row[2].'</td>
-            <td>'.$row[3].'</td>
-            <td>'.$row[4].'</td>
-            <td> <input type="text" class ="form-control sm-2" value="'.$row[5].'">    </td>
-            <td>'.$row[6].'</td>
-            <td>'.$row[7].'</td>
+        <td>'.$row[1].'</td>
+        <td>'.$row[2].'</td>
+        <td>'.$row[3].'</td>
+        <td>'.$row[4].'</td>
+        <td> <input type="text" class ="form-control sm-2" value="'.$row[5].'"  id="'.$row[0].'" onchange="setAlumnos(this.value,this.id);" >    </td>
+        <td>'.$row[6].'</td>
+        <td>'.$row[7].'</td>
         </tr>
         ';
+    }
+    else{
+        echo '
+        <tr>
+        <td>'.$row[1].'</td>
+        <td>'.$row[2].'</td>
+        <td>'.$row[3].'</td>
+        <td>'.$row[4].'</td>
+        <td> <input type="text" class ="form-control sm-2" value="'.$row[5].'"  id="'.$row[0].'" disabled></td>
+        <td>'.$row[6].'</td>
+        <td>'.$row[7].'</td>
+        </tr>
+        ';
+    }
 }
 
 echo '
     </tbody>
-    </table>';
+    </table>
+    
+
+    
+    
+    ';
 
 mysqli_close($connection);
 ?>
