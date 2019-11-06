@@ -13,11 +13,13 @@
     <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous">
     </script>
-    <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous">
+    <script src="js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
 
     <script src="js/ea0ab640f1.js"></script>
+
+    <script src="js/plotly-latest.min.js"></script>
 
 </head>
 
@@ -122,7 +124,9 @@
 
 
 
+                        <div id="myDiv">
 
+                        </div>
 
 
 
@@ -175,25 +179,32 @@
                 $('#list2').html(respuesta);
             }
         });
-
-
         $.ajax({
-            url: 'stats_time_alumn.php',
+            url: 'php/stats_time_alumn.php',
             type: 'post',
             success: function (respuesta) {
                 $('#stats_view').html(respuesta);
             }
         });
+        $.ajax({
+            url: 'graphs.php',
+            type: 'post',
+            success: function (respuesta) {
+                $('#myDiv').html(respuesta);
+            }
+        });
+
+
+
+
+
 
         function dateQuery() {
-
             var dateselec = document.querySelector("#dataSelec");
-
             var codigo = dateselec.value;
             console.log(codigo);
 
             if (codigo != '') {
-
                 $.ajax({
                     data: {
                         "codigo": codigo
@@ -209,6 +220,8 @@
                     '<div class="alert alert-danger" role="alert">Ingresa una fecha</div>');
             }
         }
+
+
     </script>
 
 </body>

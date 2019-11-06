@@ -1,5 +1,5 @@
 <?php 
-require('controller/connection.php');
+require('connection.php');
 
 $id = $_POST['id'];
 $alumnos = $_POST['alumnos'];

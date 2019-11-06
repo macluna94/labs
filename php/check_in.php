@@ -1,6 +1,6 @@
 <?php
 
-require('controller/connection.php');
+require('connection.php');
 
 date_default_timezone_set("America/Mexico_City");
  

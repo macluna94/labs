@@ -1,6 +1,6 @@
 <?php
 
-require('controller/connection.php');
+require('connection.php');
  
 $sql = "SELECT * FROM `clases` ORDER BY `clases`.`maestro_clase` ASC";
 

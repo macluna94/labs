@@ -1,5 +1,5 @@
 <?php
-require('controller/connection.php');
+require('connection.php');
 
 $dateselec = $_POST['codigo'];
 

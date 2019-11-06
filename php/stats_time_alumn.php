@@ -1,5 +1,5 @@
 <?php
-require('controller/connection.php');
+require('connection.php');
 
 
 $sql1 = 'SELECT * FROM `clases`';
@@ -34,11 +34,43 @@ function countTime($connection, $sql_tiempo){
 
 
 echo '
-    <table class="table">
-        <thead>
-            <th>Materia</th>
-            <th>Alumnos</th>
-            <th>Tiempo</th>
+
+<div class="row">
+<div class="col-4"></div>
+<div class="col-4">
+<table class="table table-sm text-center">
+<thead class="bg-info">
+<tr>
+<th class="text-white">Tiempo Total</td>
+<th class="text-white">Alumnos Totales</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-danger"><h5><strong>'.countTime($connection, "SELECT `total_time` FROM `registro`").'</strong></h5></td>
+<td class="text-danger"><h5><strong>'.countAlum($connection, "SELECT SUM(`alumnos`) FROM `registro`").'</strong></h5></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="col-4"></div>
+
+</div>
+';
+
+
+
+
+
+echo '
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Materia</th>
+                <th scope="col">Alumnos</th>
+                <th scope="col">Tiempo</th>
+            </tr>
         </thead>
     <tbody>';
 
@@ -55,10 +87,7 @@ echo '</tbody></table>';
 
 
 
-echo "<h1>Tiempo Total<h1>
-<h3>".countTime($connection, "SELECT `total_time` FROM `registro`")."<h3>";
-echo "<h1>Tiempo Total<h1>
-<h3>".countAlum($connection, "SELECT SUM(`alumnos`) FROM `registro`")."<h3>";
+
 
 mysqli_close($connection);
 ?>
