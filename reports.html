@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reportes</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    <link rel="stylesheet" href="css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous">
     </script>
 
-    <script src="https://kit.fontawesome.com/ea0ab640f1.js"></script>
+    <script src="js/ea0ab640f1.js"></script>
 
 </head>
 
@@ -25,7 +25,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4f84c9;">
-        <a href="" class="navbar-brand" style="color: white;">
+        <a href="index.html" class="navbar-brand" style="color: white;">
             <img src="src/timer.png" width="32px">
             <strong>
                 AccessDeck
@@ -124,9 +124,9 @@
                             <button type="submit" class="btn btn-primary" onclick="">Consultar</button>
                         </div>
 
-<div id="xoxo">
+                        <div id="xoxo">
 
-</div>
+                        </div>
 
                     </div>
 
@@ -163,35 +163,35 @@
 
     <script>
         $.ajax({
-            url: 'class_list.php',
+            url: 'php/class_list.php',
             type: 'post',
             success: function (respuesta) {
                 $('#list1').html(respuesta);
             }
         });
         $.ajax({
-            url: 'teacher_list.php',
+            url: 'php/teacher_list.php',
             type: 'post',
             success: function (respuesta) {
                 $('#list2').html(respuesta);
             }
         });
 
-        function reportTime(){
+        function reportTime() {
             var data_target = document.querySelector("#class_query").value;
             console.log(data_target);
 
             $.ajax({
-                    data: {
-                        "numA": data_target;
-                    },
-                    url: 'xoxo.php',
-                    type: 'post',
-                    success: function (respuesta) {
-                        $('#xoxo').html(respuesta);
-                    }
-                });
-            
+                data: {
+                    "numA": data_target;
+                },
+                url: 'php/xoxo.php',
+                type: 'post',
+                success: function (respuesta) {
+                    $('#xoxo').html(respuesta);
+                }
+            });
+
         }
 
         function dateQuery() {
@@ -207,7 +207,7 @@
                     data: {
                         "codigo": codigo
                     },
-                    url: 'datequery.php',
+                    url: 'php/datequery.php',
                     type: 'post',
                     success: function (respuesta) {
                         $('#table_date').html(respuesta);
@@ -217,10 +217,6 @@
                 $('#table_date').html(
                     '<div class="alert alert-danger" role="alert">Ingresa una fecha</div>');
             }
-
-            //dateselec.value = "";
-
-
         }
     </script>
 
