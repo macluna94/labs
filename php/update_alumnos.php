@@ -1,13 +1,5 @@
-<?php $servername="localhost";
-$database="lab";
-$username="root";
-$pass="";
-$table="clases";
-
-$connection=mysqli_connect($servername,
-    $username,
-    $pass,
-    $database);
+<?php 
+require('controller/connection.php');
 
 $id = $_POST['id'];
 $alumnos = $_POST['alumnos'];

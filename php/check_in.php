@@ -1,19 +1,9 @@
 <?php
-$servername = "localhost";
-$database = "lab";
-$username = "root";
-$pass = "";
-$table = "clases";
 
-$connection = mysqli_connect(
-    $servername,
-    $username,
-    $pass,
-    $database
-);
+require('controller/connection.php');
 
 date_default_timezone_set("America/Mexico_City");
-
+ 
 
 $codigo = $_POST['codigo'];
 
@@ -125,6 +115,8 @@ echo '
     
     
     ';
+
+    
 
 mysqli_close($connection);
 ?>
