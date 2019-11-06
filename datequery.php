@@ -1,16 +1,5 @@
 <?php
-$servername = "localhost";
-$database = "lab";
-$username = "root";
-$pass = "";
-$table = "clases";
-
-$connection = mysqli_connect(
-    $servername,
-    $username,
-    $pass,
-    $database
-);
+require('controller/connection.php');
 
 $dateselec = $_POST['codigo'];
 

@@ -1,17 +1,6 @@
 <?php
 
-$servername = "localhost";
-$database = "lab";
-$username = "root";
-$pass = "";
-$table = "clases";
-
-$connection = mysqli_connect(
-    $servername,
-    $username,
-    $pass,
-    $database
-);
+require('controller/connection.php');
  
 $sql = "SELECT * FROM `clases` ORDER BY `clases`.`maestro_clase` ASC";
 

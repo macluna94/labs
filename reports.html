@@ -74,12 +74,12 @@
                             aria-controls="home" aria-selected="true">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                            aria-controls="profile" aria-selected="false">Profile</a>
+                        <a class="nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab"
+                            aria-controls="stats" aria-selected="false">Estadisitcas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                            aria-controls="contact" aria-selected="false">Contact</a>
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#graficas" role="tab"
+                            aria-controls="graficas" aria-selected="false">Graficas</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -104,35 +104,34 @@
                     </div>
 
 
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3>Tiempo</h3>
+                    <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+                        <h3>Estadisitcas</h3>
 
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label for="dateSelec">Clase: </label>
-                                <div id="list1">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary" onclick="reportTime()">Consultar</button>
-                        </div>
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label for="dateSelec">Maestro: </label>
-                                <div id="list2">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary" onclick="">Consultar</button>
+                        <div id="stats_view">
+
                         </div>
 
-<div id="xoxo">
-
-</div>
 
                     </div>
 
 
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <h3>Tab3</h3>
+                    <div class="tab-pane fade" id="graficas" role="tabpanel" aria-labelledby="graficas-tab">
+                        <h3>Resumen </h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -177,22 +176,14 @@
             }
         });
 
-        function reportTime(){
-            var data_target = document.querySelector("#class_query").value;
-            console.log(data_target);
 
-            $.ajax({
-                    data: {
-                        "numA": data_target;
-                    },
-                    url: 'xoxo.php',
-                    type: 'post',
-                    success: function (respuesta) {
-                        $('#xoxo').html(respuesta);
-                    }
-                });
-            
-        }
+        $.ajax({
+            url: 'stats_time_alumn.php',
+            type: 'post',
+            success: function (respuesta) {
+                $('#stats_view').html(respuesta);
+            }
+        });
 
         function dateQuery() {
 
