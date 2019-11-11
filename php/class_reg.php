@@ -17,7 +17,9 @@ if ($nombre[0] != "") {
     
     for($i = 0; $i < count($nombre) ;$i++){
         
-        $sql = "INSERT INTO `clases` (`id_class`, `name_teacher`, `name_class`,`class_rom` ,`carreer_class`,`semester_class`, `num_students`, `stage`) VALUES (NULL, '$nombre[$i]', '$clase[$i]', '$sala[$i]','$carrera[$i]', '$semestre[$i]', '$estudiante[$i]','$periodo[$i]')";
+        $sql = "
+        INSERT INTO `clases` (`id_clase`, `nombre_clase`, `maestro_clase`, `sala_clase`, `carrera_clase`, `semestre`, `alumnos_clase`, `periodo_clase`) VALUES (NULL, '$clase[$i]', '$nombre[$i]', '$sala[$i]', '$carrera[$i]', '$semestre[$i]','$estudiante[$i]', '$periodo[$i]');
+";
 
     
 

@@ -16,10 +16,11 @@
     <script src="js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
-
     <script src="js/ea0ab640f1.js"></script>
+    <link rel="stylesheet" href="css/free.min.css" media="only x">
+    <link rel="stylesheet" href="css/free-v4-shims.min.css" media="all">
 
-    <script src="js/plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 
@@ -68,8 +69,7 @@
 
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-9">
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -96,70 +96,19 @@
                             </div>
                             <button type="submit" class="btn btn-primary" onclick="dateQuery();">Consultar</button>
                         </div>
-
-
-                        <div id="table_date">
-
-                        </div>
-
-
+                        <div id="table_date"></div>
                     </div>
-
-
                     <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
                         <h3>Estadisitcas</h3>
-
-                        <div id="stats_view">
-
-                        </div>
-
-
+                        <div id="stats_view"></div>
                     </div>
-
-
                     <div class="tab-pane fade" id="graficas" role="tabpanel" aria-labelledby="graficas-tab">
                         <h3>Resumen </h3>
-
-
-
-
-
-                        <div id="myDiv">
-
-                        </div>
-
-
-
-
-
-
-
-
-
+                        <div id="myDiv"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="container">
-                    <div class="card" style="width: 18rem;">
-                        <img src="src/logo_reportes.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Tareas</h5>
-                            <ul>
-                                <li>Numero de registros</li>
-                                <li>Tiempo total por clase</li>
-                                <li>Tiempo total por Maestro</li>
-                                <li>Alumnos por semestre</li>
-                                <li style="color: red;">Cambio de numero de alumnos desde tabla</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="table_date">
 
     </div>
@@ -193,6 +142,15 @@
                 $('#myDiv').html(respuesta);
             }
         });
+
+
+
+
+
+
+
+
+
 
 
 

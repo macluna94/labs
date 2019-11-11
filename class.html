@@ -10,21 +10,20 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous">
     </script>
     <script src="js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
-
     <script src="js/ea0ab640f1.js"></script>
-
+    <link rel="stylesheet" href="css/free.min.css" media="only x">
+    <link rel="stylesheet" href="css/free-v4-shims.min.css" media="all">
 
 
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4f84c9;">
         <a href="index.html" class="navbar-brand" style="color: white;">
             <img src="src/timer.png" width="32px">
@@ -35,10 +34,7 @@
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-
             <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-
-
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -64,121 +60,92 @@
     </nav>
 
     <div class="container">
-
         <div class="title-contenedor text-center">
             <h1>Registro de Clases</h1>
-            <span>en el laboratorio</span>
+        </div>
+        <div class="form-row text-center">
+            <div class="col-3 ">
+                <label for="">Maestro</label>
+            </div>
+            <div class="col-2">
+                <label for="">Clase</label>
+            </div>
+            <div class="col-1">
+                <label for="">Sala</label>
+            </div>
+            <div class="col-2">
+                <label for="">Carrera</label>
+            </div>
+            <div class="col-1">
+                <label for="">Semestre</label>
+            </div>
+            <div class="col-1">
+                <label for="">Alumnos</label>
+            </div>
+            <div class="col-2">
+                <label for="">Periodo</label>
+            </div>
         </div>
 
-
-        <div class="container">
-
-            <div class="form-row text-center">
-                <div class="col-3 ">
-                    <label for="">Maestro</label>
-                </div>
-                <div class="col-2">
-                    <label for="">Clase</label>
-                </div>
-                <div class="col-1">
-                    <label for="">Sala</label>
-                </div>
-                <div class="col-2">
-                    <label for="">Carrera</label>
-                </div>
-                <div class="col-1">
-                    <label for="">Semestre</label>
-                </div>
-                <div class="col-1">
-                    <label for="">Alumnos</label>
-                </div>
-                <div class="col-2">
-                    <label for="">Periodo</label>
-                </div>
+        <div class="form-row text-center" id="unodos">
+            <div class="col-3 ">
+                <input type="text" class="form-control " id="name_teacher">
             </div>
-
-
-
-            <div class="form-row text-center" id="unodos">
-                <div class="col-3 ">
-
-                    <input type="text" class="form-control " id="name_teacher">
-
-                </div>
-                <div class="col-2">
-
-                    <input type="text" class="form-control" id="class_name">
-
-                </div>
-                <div class="col-1">
-                    <select class="form-control" id="class_rom">
-                        <option value="1"> 1 </option>
-                        <option value="2"> 2 </option>
-                    </select>
-                </div>
-                <div class="col-2">
-
-                    <select class="form-control" id="carrer">
-                        <option value="industrial">Industrial</option>
-                        <option value="electromecanica">Eletromecanica</option>
-                        <option value="sistemas">Sistemas</option>
-                        <option value="administracion">Adminstracion</option>
-                        <option value="contabilidad">Contabilidad</option>
-                    </select>
-
-                </div>
-                <div class="col-1">
-
-                    <select class="form-control" id="semester">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
-
-                </div>
-                <div class="col-1">
-
-                    <input type="text" class="form-control" min="1" id="num_students">
-
-                </div>
-                <div class="col-2">
-
-                    <select class="form-control" id="stage">
-                        <option value="Enero-Julio">En - Jul</option>
-                        <option value="Agosto-Diciembre">Agost - Dic</option>
-                    </select>
-
-                </div>
+            <div class="col-2">
+                <input type="text" class="form-control" id="class_name">
             </div>
-
-
-
-            <div style="align-self: center;margin-top: 1em;">
-                <button class="btn btn-primary" id="row_add_class" disabled="true">
-                    <i class="fas fa-plus-circle"></i>
-                </button>
-                <button type="submit" class="btn btn-primary" onclick="dataName()">Registrar</button>
+            <div class="col-1">
+                <select class="form-control" id="class_rom">
+                    <option value="1"> 1 </option>
+                    <option value="2"> 2 </option>
+                </select>
             </div>
-
-
+            <div class="col-2">
+                <select class="form-control" id="carrer">
+                    <option value="Ing. Industrial">Ing. Industrial</option>
+                    <option value="Ing. Electromecanica">Ing. Electromecanica</option>
+                    <option value="Ing. Sistemas">Ing. Sistemas</option>
+                    <option value="Administracion">Administracion</option>
+                    <option value="Contador Publico">Contador Publico</option>
+                    <option value="Gestion Empresarial">Gestion Empresarial</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <select class="form-control" id="semester">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <input type="text" class="form-control" min="1" id="num_students">
+            </div>
+            <div class="col-2">
+                <select class="form-control" id="stage">
+                    <option value="Enero-Julio">Ene-Jul</option>
+                    <option value="Agosto-Diciembre">Agost - Dic</option>
+                </select>
+            </div>
+        </div>
+        <div style="align-self: center;margin-top: 1em;">
+            <button class="btn btn-primary" id="row_add_class" disabled="true">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+            <button type="submit" class="btn btn-primary" onclick="dataName()">Registrar</button>
         </div>
     </div>
 
-    <div class="container" id="respuesta">
-
-    </div>
-
-
+    <div class="container" id="respuesta"></div>
 
     <script>
         $("#row_add_class").click(function () {
             $("#unodos").append(
-                '<br/><div class="col-3"><input type="text" class="form-control" id="name_teacher"></div><div class="col-2"><input type="text" class="form-control" id="class_name"></div><div class="col-1"><select class="form-control" id="class_rom"><option value="1"> 1 </option><option value="2"> 2 </option></select></div><div class="col-2"><select class="form-control" id="carrer"><option value="industrial">Industrial</option><option value="electromecanica">Eletromecanica</option><option value="sistemas">Sistemas</option><option value="administracion">Adminstracion</option><option value="contabilidad">Contabilidad</option></select></div><div class="col-1"><select class="form-control" id="semester"><option value="1">1</option><option value="2">2</option> <option value="3">3</option> <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select> </div><div class="col-1"><input type="number" class="form-control" min="1" id="num_students"></div><div class="col-2"><select class="form-control" id="stage"><option value="Enero-Julio">En-Jul</option><option value="Septiembre-Diciembre">Sep- Dic</option></select></div>'
+                '<br/><div class="col-3"><input type="text" class="form-control" id="name_teacher"></div><div class="col-2"><input type="text" class="form-control" id="class_name"></div><div class="col-1"><select class="form-control" id="class_rom"><option value="1"> 1 </option><option value="2"> 2 </option></select></div><div class="col-2"><select class="form-control" id="carrer"><option value="Ing. Industrial">Ing. Industrial</option><option value="Ing. Electromecanica">Ing. Electromecanica</option><option value="Ing. Sistemas">Ing. Sistemas</option><option value="Administracion">Administracion</option><option value="Contador Publico">Contador Publico</option><option value="Gestion Empresarial">Gestion Empresarial</option></select></div><div class="col-1"><select class="form-control" id="semester"><option value="1">1</option><option value="2">2</option> <option value="3">3</option> <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select> </div><div class="col-1"><input type="number" class="form-control" min="1" id="num_students"></div><div class="col-2"><select class="form-control" id="stage"><option value="Enero-Julio">En-Jul</option><option value="Septiembre-Diciembre">Sep- Dic</option></select></div>'
             );
             console.log("Hecho");
         });
@@ -254,7 +221,7 @@
 
             $.ajax({
                 data: datos_clases,
-                url: 'class_reg.php',
+                url: 'php/class_reg.php',
                 type: 'post',
                 success: function (respuesta) {
                     $('#respuesta').html(respuesta);
@@ -262,23 +229,18 @@
             });
         }
     </script>
-
     <script>
         $("#name_teacher").keyup(function () {
-
             if ($("#name_teacher").length == 4) {
                 //$("#row_add_class").attr('disabled','true');
                 console.log("Vacio");
             } else {
                 $("#row_add_class").removeAttr('disabled');
             }
-
             console.log($("#name_teacher").val());
             console.log($("#name_teacher").length);
-
         });
     </script>
 
 </body>
-
 </html>
